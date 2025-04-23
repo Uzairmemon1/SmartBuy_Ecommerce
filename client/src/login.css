@@ -1,0 +1,146 @@
+.login-wrapper {
+  position: relative;
+  height: 100vh;
+  background-image: url('./background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.login-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Darker overlay for contrast */
+  z-index: 0;
+}
+
+.login-box {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.fade-in-text {
+  font-size: 42px;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 2s ease-out forwards, glowTextDark 3s ease-in-out infinite alternate;
+}
+
+
+/* Animation: fade in + slide up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow animation */
+@keyframes glowTextDark {
+  0% {
+    text-shadow: 
+      0 0 10px #ffffff22, 
+      0 0 20px #88888888, 
+      0 0 30px #aaaaaa66;
+  }
+  100% {
+    text-shadow: 
+      0 0 20px #ffffff44, 
+      0 0 35px #999999aa, 
+      0 0 45px #cccccc99;
+  }
+}
+
+
+.login-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.login-container button:hover {
+  background: #059669;
+}
+
+@media (max-width: 768px) {
+  .fade-in-text {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .login-container {
+    padding: 25px 20px;
+  }
+
+  .login-container input,
+  .login-container button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-wrapper {
+    padding: 10px;
+  }
+
+  .fade-in-text {
+    font-size: 26px;
+  }
+
+  .login-container {
+    padding: 18px 14px;
+  }
+}

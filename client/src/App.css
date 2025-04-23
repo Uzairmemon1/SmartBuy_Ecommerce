@@ -1,0 +1,215 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #7f00ff, #e100ff, #ff6a00);
+  min-height: 100vh;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-heading {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0);
+  width: 450px; 
+  max-width: 100%;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #10b981;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-group button:hover {
+  background-color: #059669;
+}
+
+.record-list {
+  background: transparent;
+  flex: 2;
+  min-height: 400px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  min-width: 400px;
+  
+  max-height: 500px; /* Limit the height */
+  overflow-y: auto;  /* Enable vertical scroll */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.record-card {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.record-card p {
+  margin: 5px 0;
+}
+
+.record-card button {
+  margin-right: 10px;
+  padding: 6px 10px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.record-card button:hover {
+  background-color: #2563eb;
+}
+.record-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Edit Button Style */
+.edit-btn {
+  background-color: #1e90ff; /* Dodger Blue */
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(21, 101, 192, 0.3);
+}
+
+.delete-btn {
+  background-color: #ff4d4f; /* Red */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+}
+
+.heading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp 2s ease-in-out;
+  margin-top: 20px;
+}
+
+.heading-container h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+/* Glow text animation */
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 10px #ffffff80, 0 0 20px #ffffff40;
+  }
+  100% {
+    text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffffaa;
+  }
+}
+
+/* Smooth upward fade for heading */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Move the main form/record content upward */
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 40px 40px 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: -40px; /* Moves the container upward */
+}
